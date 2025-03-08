@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: lables
+  labels:
+    name: naveenrajoli
+    environment: prod
+    project: expense-prod
+
+spec:
+  containers:
+  - name: nginxlable
+    image: lable
+    
