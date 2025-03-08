@@ -4,7 +4,7 @@ matadata:
   name: pod-config
 spec:
   containers:
-  - name: nginx
+  - name: nginx1
     image: nginx
     envFrom:
     - configMapRef:
