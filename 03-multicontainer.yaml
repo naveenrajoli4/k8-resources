@@ -10,3 +10,4 @@ spec:
 
   - name: nginx2
     image: almalinux:9
+    command: ["sleep", "2000"]
