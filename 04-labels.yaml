@@ -12,4 +12,10 @@ spec:
   containers:
   - name: nginxlable
     image: nginx
+
+
+# WHAT IS LABELS
+
+# In Kubernetes, labels are key-value pairs assigned to resources (like Pods, Services, etc.) to help organize, select, and manage them efficiently.
+# They are crucial for grouping and filtering resources based on meaningful attributes.
     
