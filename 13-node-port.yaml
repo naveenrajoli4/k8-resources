@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport_svc
+spec:
+  type: NodePort
+  selector:
+    name: naveenrajoli
+    environment: prod
+    project: expense
+    component: nodeport_svc_web
+    version: "1.0.0"
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodeport: 30007
