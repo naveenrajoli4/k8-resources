@@ -1,32 +1,32 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nodeport-svac
+  name: loadbalancer-svc
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     name: naveenrajoli
     environment: prod
     project: expense
-    component: nodeport-svc-web
-    version: "1.0.1"
+    component: LoadBalancer-svc-web
+    version: "1.0.0"
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
-    nodePort: 30008
+    nodePort: 30009
 ---
 
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginxnodeqqq
+  name: nginxlb
   labels:
     name: naveenrajoli
     environment: prod
     project: expense
-    component: nodeport-svc-web
-    version: "1.0.1"
+    component: LoadBalancer-svc-web
+    version: "1.0.0"
 spec:
   containers:
   - name: nginx
