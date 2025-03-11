@@ -20,6 +20,22 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: naveenrajoli/nginxdeploy:1.1
         ports:
         - containerPort: 80
+---
+
+apiVerson: v1
+kind: Service
+metadata:
+  name: deployment-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: frontend-dep
+    tier: web-dep
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 3007
