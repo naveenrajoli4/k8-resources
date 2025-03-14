@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: efs-static
+spec:
+  capacity:
+    storage: 5Gi   # Storage is managed by AWS EFS
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany  # Allows multiple pods to read/write
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: ""
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: fs-08d41870833a1543e
